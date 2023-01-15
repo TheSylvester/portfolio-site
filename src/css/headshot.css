@@ -1,0 +1,10 @@
+/* Styles for Developer Photo */
+
+img.headshot {
+    position: fixed;
+    top: 50%;
+    left: calc(50% + 200px);
+    width: 480px;
+    transform: translateY(-50%);
+    z-index: -1;
+}

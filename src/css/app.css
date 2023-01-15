@@ -1,0 +1,51 @@
+/* main variables and definitions */
+
+/*@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=auto');*/
+/*
+font-family: 'Bebas Neue', cursive;
+font-family: 'Montserrat', sans-serif;
+ */
+
+@import "./navbar.css";
+@import "./utilities.css";
+@import "./nameAndTitle.css";
+@import "./headshot.css";
+@import "./downArrow.css";
+@import "./tagline.css";
+@import "./projects.css";
+
+:root {
+    --black: #000000;
+    --white: #EAEAEA;
+    --dark: #9E9E9E;
+    --darker: #555555;
+}
+
+html {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    scroll-snap-type: y proximity;
+}
+
+body {
+    /*height: 5000px;*/
+
+    height: 5000px;
+}
+
+/* the app container */
+.app-container {
+}
+
+/* the logical page1 */
+.section-hero {
+    scroll-snap-align: start;
+    height: 100vh;
+    width: 100%;
+}
+
+
+
+
+/* utility classes */

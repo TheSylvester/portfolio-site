@@ -1,0 +1,44 @@
+.nav-desktop {
+    position: fixed;
+    width: 106px;
+    height: 100vh;
+    top: 0;
+    background-color: var(--black);
+    z-index: 10;
+}
+
+.nav-top-bar {
+    position: absolute;
+    width: 100vw;
+    height: 100px;
+    background-color: var(--black);
+    z-index: -1;
+}
+
+.nav-logo {
+    margin-top: 27px;
+}
+
+.nav-logo-bracket {
+    font: 42px 'Montserrat', sans-serif;
+}
+
+.nav-logo-letters {
+    font: 37px 'Bebas Neue', cursive;
+}
+
+.nav-item-vertical {
+    font: 20px 'Montserrat', sans-serif;
+    writing-mode: vertical-lr;
+    margin-top: 54px;
+}
+
+.nav-focus {
+    color: var(--white);
+}
+
+.nav-no-focus {
+    color: var(--dark);
+}
+
+

@@ -1,0 +1,50 @@
+/* Utility Classes */
+
+/* testing borders */
+.red-border {
+    border: 1px solid red;
+    box-sizing: border-box;
+}
+
+.blue-border {
+    border: 1px solid blue;
+    box-sizing: border-box;
+
+}
+
+.green-border {
+    border: 1px solid green;
+    box-sizing: border-box;
+
+}
+
+.yellow-border {
+    border: 1px solid yellow;
+    box-sizing: border-box;
+}
+
+.purple-border {
+    border: 1px solid purple;
+    box-sizing: border-box;
+}
+
+.white-border {
+    border: 1px solid white;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.sticky {
+    position: sticky;
+}

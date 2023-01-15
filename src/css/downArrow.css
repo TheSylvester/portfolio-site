@@ -1,0 +1,35 @@
+/* Down Arrow on hero page */
+
+.down-arrow {
+    display: inline;
+    height: 43px;
+    width: 43px;
+    opacity: var(--scrollerOpacity);
+}
+
+.down-arrow-container {
+    display: block;
+    height: 43px;
+    position: absolute;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    --scrollerOpacity: 1;
+    --taglineOpacity: 1;
+}
+
+.down-arrow-container::before {
+    content: 'scroll';
+    position: absolute;
+    left: -43px;
+    display: inline;
+    font-family: 'Bebas Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    text-align: right;
+    vertical-align: top;
+    color: var(--white);
+    opacity: var(--scrollerOpacity);
+}
+
