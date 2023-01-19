@@ -1,0 +1,33 @@
+/* Chroma Gallery Section */
+.section-chromaGallery {
+    border: 1px solid red;
+
+    position: relative;
+    scroll-snap-align: start;
+    height: 100vh;
+    color: black;
+}
+
+img.chroma-gallery-pic {
+    border: 1px solid red;
+
+    position: absolute;
+    right: 50%;
+    width: 700px;
+    transform: translate(calc(50% - 65px), -33%);
+}
+
+.chroma-gallery-title {
+    font: 96px 'Bebas Neue', cursive;
+    text-decoration: underline black 2px;
+    text-underline-offset: 22px;
+    color: var(--black);
+}
+
+.chroma-gallery-block-a {
+    border: 1px solid green;
+}
+
+.chroma-gallery-block-b {
+    border: 1px solid yellow;
+}

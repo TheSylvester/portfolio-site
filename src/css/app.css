@@ -13,6 +13,8 @@ font-family: 'Montserrat', sans-serif;
 @import "./downArrow.css";
 @import "./tagline.css";
 @import "./projects.css";
+@import "./chromaGallery.css";
+
 
 :root {
     --black: #000000;

@@ -6,11 +6,6 @@
     scroll-snap-align: start;
 }
 
-.section-chromaGallery {
-    scroll-snap-align: start;
-    height: 100vh;
-}
-
 .projects-container {
     position: relative;
     height: 100%;
@@ -27,12 +22,4 @@
     line-height: 89%;
     text-align: center;
     color: var(--black);
-}
-
-img.chroma-gallery-pic {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    width: 700px;
-    transform: translate(calc(-50% - 65px), -33%);
 }

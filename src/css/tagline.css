@@ -1,7 +1,7 @@
 /* tagline box */
 .tagline-container {
     position: absolute;
-    width: 445px;
+    width: 390px;
     height: fit-content;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -9,16 +9,35 @@
 }
 
 p.tagline {
+    padding-left: 30px;
     opacity: 1;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-size: 40px;
-    font-weight: 800;
+
     line-height: 140%;
     letter-spacing: -0.05em;
     text-align: left;
-    color: var(--white);
     z-index: -1;
+}
+
+.tagline-bold {
+    font-weight: 800;
+    color: var(--white);
+}
+
+.tagline-thin {
+    font-weight: 200;
+    color: var(--white);
+}
+
+.tagline-dark {
+    color: var(--dark);
+}
+
+.tagline-small {
+    font-size: 20px;
+    color: var(--dark);
 }
 
 .section-revealTagline {

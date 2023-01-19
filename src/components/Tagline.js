@@ -2,15 +2,23 @@ export function Tagline() {
   return (
     <div className={"tagline-container"}>
       <p className={"tagline"}>
-        I build full stack
+        <span className={"tagline-dark"}>I build</span>{" "}
+        <span className={"tagline-bold"}>full stack</span>
         <br />
-        web applications with
+        <span className={"tagline-thin"}>web applications</span>{" "}
+        <span className={"tagline-small"}>with</span>
         <br />
-        aesthetic designs,
+        <span className={"tagline-bold"}>aesthetic</span>{" "}
+        <span className={"tagline-thin"}>designs,</span>
         <br />
-        clean code, and
+        <span className={"tagline-bold"}>clean</span>{" "}
+        <span className={"tagline-thin"}>code, </span>
+        <span className={"tagline-small"}>and</span>
         <br />
-        lots of love <span style={{ color: "red" }}>❤</span>
+        <span className={"tagline-bold"}>lots</span>{" "}
+        <span className={"tagline-small"}>of</span>{" "}
+        <span className={"tagline-bold"}>love</span>{" "}
+        <span style={{ color: "red" }}>❤</span>
       </p>
     </div>
   );

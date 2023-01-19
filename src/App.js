@@ -29,15 +29,37 @@ const App = () => {
       {/* work */}
       <section className={"section-projects"}>
         <div className={"projects-container"}>
-          <h1 className={"projects-header a"}>Recent Projects</h1>
-          <img
-            className={"chroma-gallery-pic a"}
-            src={chromaGalleryPic}
-            alt="Sylvester headshot pic"
-          />
+          <h1 className={"projects-header projects-fade-in"}>
+            Recent Projects
+          </h1>
         </div>
       </section>
-      <section className={"section-chromaGallery"}></section>
+      <section className={"section-chromaGallery"}>
+        <img
+          className={"chroma-gallery-pic projects-fade-in"}
+          src={chromaGalleryPic}
+          alt="Chroma Gallery pic"
+        />
+        <div className={"chroma-gallery-block-a"}>
+          <h1 className={"chroma-gallery-title"}>Chroma Gallery</h1>
+          <p className={"chroma-gallery-paragraph"}>
+            Video gallery and file repository for Razer RGB lighting profiles
+            collected from Reddit via REST API and analyzed for searchability
+          </p>
+        </div>
+        <div className={"chroma-gallery-block-b"}>
+          <h2 className={"chroma-gallery-subheading"}>Built With:</h2>
+          <ul>
+            <li>React</li>
+            <li>NodeJS</li>
+            <li>Express</li>
+            <li>MongoDB</li>
+          </ul>
+          <div className={"chroma-gallery-footer"}>
+            <span>visit page</span> | <span>source on Github</span>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
