@@ -4,6 +4,10 @@ const headshot =
 
 export function Headshot() {
   return (
-    <img className={"headshot"} src={headshot} alt="Sylvester headshot pic" />
+    <img
+      className={"headshot show-on-load"}
+      src={headshot}
+      alt="Sylvester headshot pic"
+    />
   );
 }

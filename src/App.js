@@ -10,6 +10,7 @@ import chromaGalleryPic from "./assets/chromagallery_1920.png";
 
 const App = () => {
   useEffect(() => {
+    window.addEventListener("resize", (event) => {});
     document.fonts.ready.then(siteAnimations);
   }, []);
 
@@ -40,14 +41,12 @@ const App = () => {
           src={chromaGalleryPic}
           alt="Chroma Gallery pic"
         />
-        <div className={"chroma-gallery-block-a"}>
+        <div className={"chroma-gallery-block"}>
           <h1 className={"chroma-gallery-title"}>Chroma Gallery</h1>
           <p className={"chroma-gallery-paragraph"}>
             Video gallery and file repository for Razer RGB lighting profiles
             collected from Reddit via REST API and analyzed for searchability
           </p>
-        </div>
-        <div className={"chroma-gallery-block-b"}>
           <h2 className={"chroma-gallery-subheading"}>Built With:</h2>
           <ul>
             <li>React</li>
@@ -56,9 +55,13 @@ const App = () => {
             <li>MongoDB</li>
           </ul>
           <div className={"chroma-gallery-footer"}>
-            <span>visit page</span> | <span>source on Github</span>
+            <a href={"https://www.reddit.com"}>visit page</a> |{" "}
+            <a href={"https://www.reddit.com"}>source on Github</a>
           </div>
         </div>
+      </section>
+      <section style={{ height: "500vh", scrollSnapAlign: "start" }}>
+        <h1>Next Section</h1>
       </section>
     </div>
   );

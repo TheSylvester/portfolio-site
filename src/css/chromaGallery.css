@@ -1,33 +1,100 @@
 /* Chroma Gallery Section */
 .section-chromaGallery {
-    border: 1px solid red;
+    /*border: 3px solid red;*/
+    scroll-snap-align: start;
 
     position: relative;
-    scroll-snap-align: start;
     height: 100vh;
     color: black;
 }
 
+/*.chroma-gallery-snap-a {*/
+/*    !*scroll-snap-align: start;*!*/
+/*    border: 1px solid blue;*/
+/*    height: 200px;*/
+/*}*/
+/*.chroma-gallery-snap-b {*/
+
+/*    position: relative;*/
+/*    !*scroll-snap-align: start;*!*/
+/*    height: calc(100vh - 200px);*/
+/*}*/
+
 img.chroma-gallery-pic {
-    border: 1px solid red;
 
     position: absolute;
-    right: 50%;
-    width: 700px;
-    transform: translate(calc(50% - 65px), -33%);
+    /*right: 75px;*/
+    /*top: 165px;*/
+    width: 36vw;
+    transform: translate(calc(100vw - 100% - 75px), 165px);
 }
 
 .chroma-gallery-title {
+    position: relative;
     font: 96px 'Bebas Neue', cursive;
-    text-decoration: underline black 2px;
-    text-underline-offset: 22px;
+    /*text-decoration: underline black 2px;*/
+    /*text-underline-offset: 22px;*/
     color: var(--black);
 }
 
-.chroma-gallery-block-a {
-    border: 1px solid green;
+.chroma-gallery-title::after {
+    content: "";
+    position: absolute;
+    top: calc(100% - 1rem);
+    width: 100%;
+    left: 0;
+    height: 1px;
+    border-radius: 2px;
+    background: linear-gradient(to right, #FF0000, #FFFF00, #FFFF00, #00FFFF, #3300FF, #FF00FF);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
-.chroma-gallery-block-b {
-    border: 1px solid yellow;
+.chroma-gallery-paragraph {
+    margin: 40px 0 40px 0;
+    font: 500 28px 'Montserrat', sans-serif;
+    letter-spacing: -0.035em;
+    color: var(--darker);
+
+}
+
+.chroma-gallery-block {
+
+    opacity: 1;     /* remove THIS */
+
+    position: absolute;
+    top: 235px;
+    right: 50%;
+    width: 520px;
+}
+
+.chroma-gallery-subheading {
+    font: 40px 'Bebas Neue', cursive;
+    scroll-snap-align: start;
+    scroll-margin-top: 100px;
+}
+
+.chroma-gallery-block li {
+    font: 500 28px 'Montserrat', sans-serif;
+    color: var(--darker);
+    padding-left: 1em;
+    /*list-style: disc;*/
+}
+
+.chroma-gallery-block li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: var(--black); /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.chroma-gallery-footer {
+    margin-top: 40px;
+    font-size: 24px;
+}
+
+.chroma-gallery-footer a {
+    font-size: 24px;
+    color: var(--black);
 }

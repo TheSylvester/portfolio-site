@@ -27,7 +27,7 @@ html {
     background-color: var(--black);
     color: var(--white);
     font-family: 'Montserrat', sans-serif;
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
 }
 
 body {
@@ -47,7 +47,9 @@ body {
     width: 100%;
 }
 
+.show-on-load {
 
+}
 
 
 /* utility classes */

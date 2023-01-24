@@ -3,13 +3,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const siteAnimations = () => {
-  /* center the hero elements on page load */
-  const containerWidth = document.querySelector(".dev-container").offsetWidth;
-  const frameWidth = document.querySelector(".dev-frame").offsetWidth;
-  gsap.set(".dev-frame", {
-    x: containerWidth / 2 - frameWidth / 2,
-  });
+function animateHeroToTagline() {
+  /* Shrink Name, Show Tagline */
 
   /* Hero Page animation */
   const tlHero = gsap.timeline({ paused: true });
@@ -54,7 +49,7 @@ export const siteAnimations = () => {
   /* triggers */
   ScrollTrigger.create({
     trigger: ".dev-container",
-    scrub: true,
+    scrub: 1,
     start: "center center",
     end: "top",
     animation: tlHero,
@@ -65,6 +60,7 @@ export const siteAnimations = () => {
     start: "top top",
     end: "max",
     pin: true,
+    pinSpacing: false,
   });
 
   /* show tagline */
@@ -74,11 +70,9 @@ export const siteAnimations = () => {
     .fromTo(
       ".tagline-container",
       {
-        opacity: 1,
         scale: 0,
       },
       {
-        opacity: 1,
         scale: 1,
         ease: "power2.in",
       }
@@ -98,8 +92,11 @@ export const siteAnimations = () => {
     end: "bottom center",
     scrub: true,
     animation: tlTaglineFadeIn,
+    immediateRender: false,
   });
+}
 
+function animateTaglineToProjects() {
   /* zoom to white */
   const tlZoomTagline = gsap.timeline({ paused: true });
   tlZoomTagline
@@ -138,82 +135,102 @@ export const siteAnimations = () => {
     animation: tlZoomTagline,
     start: "top center",
     end: "bottom top",
-    scrub: true,
+    scrub: 1,
   });
 
   /* fade in recent projects */
   const tlProjectsHeaderFadeIn = gsap.timeline({ paused: true });
-  tlProjectsHeaderFadeIn.fromTo(
-    ".projects-fade-in",
-    { opacity: "0" },
-    {
-      opacity: "1",
-      stagger: {
-        each: 0.4,
+  tlProjectsHeaderFadeIn
+    .fromTo(
+      ".projects-header",
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 0.5,
+      }
+    )
+    .fromTo(
+      ".chroma-gallery-pic",
+      {
+        // x: () => gsap.getProperty(".chroma-gallery-pic", "width") / 2 - 65,
+        x: () =>
+          window.innerWidth / 2 -
+          gsap.getProperty(".chroma-gallery-pic", "width") / 2 -
+          65,
       },
-      duration: 0.5,
-    }
-  );
+      {
+        y: "-33%",
+      },
+      "<"
+    );
 
   ScrollTrigger.create({
     trigger: ".section-projects",
     animation: tlProjectsHeaderFadeIn,
-    toggleActions: "play complete reverse reverse",
+    toggleActions: "play resume reverse reverse",
     start: "-3px top",
     end: "top top",
   });
+}
 
-  /* slide down recent projects on scrub until fade out */
-  const tlProjectsSlideDown = gsap.timeline({ paused: true });
-  tlProjectsSlideDown.to(".projects-header", {
-    y: "+=120",
-    // opacity: 0,
-  });
+function animateProjectsToChromaGallery() {
+  /* parallax recent projects on scrub until fade out */
+  const tlProjectsParallax = gsap.timeline({ paused: true });
+  tlProjectsParallax
+    .to(".projects-header", {
+      y: () => window.innerHeight / 2 + 100,
+      duration: 1,
+    })
+    .to(
+      ".chroma-gallery-pic",
+      {
+        y: 165,
+        duration: 1,
+        onComplete: () => tlSlideChromaGalleryPic.play(),
+      },
+      "<"
+    )
+    .to(".projects-header", { opacity: 0, duration: 0.25 }, "0.75");
 
   ScrollTrigger.create({
     trigger: ".section-projects",
-    animation: tlProjectsSlideDown,
+    animation: tlProjectsParallax,
     start: "top top",
-    end: "center 100",
-    scrub: true,
-    immediateRender: false,
-  });
-
-  /* fade out Recent Projects */
-  const tlProjectsFadeOut = gsap.timeline({ paused: true });
-  tlProjectsFadeOut.to(".projects-header", {
-    scale: "0.9",
-    y: "+=50",
-    opacity: "0",
-    // duration: 0.2,
-  });
-
-  ScrollTrigger.create({
-    trigger: ".section-projects",
-    animation: tlProjectsFadeOut,
-    toggleActions: "play complete reverse reverse",
-    start: "center 101",
-    end: "center top",
-    scrub: true,
-    immediateRender: false,
-  });
-
-  /* pin and slide ChromaGallery pic */
-  const tlChromaGalleryPicSlide = gsap.timeline({ paused: true });
-  tlChromaGalleryPicSlide.to(".chroma-gallery-pic", {
-    x: () => window.innerWidth / 2 - 75,
-    // window.innerWidth / 2 - gsap.getProperty(".chroma-gallery-pic", "width"),
-  });
-
-  ScrollTrigger.create({
-    trigger: ".section-chromaGallery",
-    animation: tlChromaGalleryPicSlide,
-    toggleActions: "play complete reverse reverse",
-    start: () =>
-      -(gsap.getProperty(".chroma-gallery-pic", "height") / 3) - 75 + " 100", // "-75 100",
     end: "bottom top",
-    pin: ".chroma-gallery-pic",
+    onEnterBack: () => tlSlideChromaGalleryPic.reverse(),
+    scrub: true,
     immediateRender: false,
-    markers: true,
   });
+
+  /* slide Chroma Gallery sideways and fade in the rest */
+
+  const tlSlideChromaGalleryPic = gsap.timeline({ paused: true });
+  tlSlideChromaGalleryPic
+    .to(".chroma-gallery-pic", {
+      x: () =>
+        window.innerWidth -
+        gsap.getProperty(".chroma-gallery-pic", "width") -
+        (window.innerWidth / 2 -
+          gsap.getProperty(".chroma-gallery-pic", "width")) /
+          2,
+    })
+    .fromTo(".chroma-gallery-block", { opacity: 0 }, { opacity: 1 });
+}
+
+function animateInitialPage() {
+  /* center the hero elements on page load */
+  const containerWidth = document.querySelector(".dev-container").offsetWidth;
+  const frameWidth = document.querySelector(".dev-frame").offsetWidth;
+  gsap.set(".dev-frame", {
+    x: containerWidth / 2 - frameWidth / 2,
+  });
+  let targets = gsap.utils.toArray(".show-on-load");
+  gsap.fromTo(targets, { opacity: 0 }, { opacity: 1, stagger: 0.1 });
+}
+
+export const siteAnimations = () => {
+  animateInitialPage();
+  animateHeroToTagline(); // Shrink name, show tagline
+  animateTaglineToProjects(); // zoom tagline, wipe screen white, fade in projects
+  animateProjectsToChromaGallery();
 };
