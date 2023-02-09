@@ -1,8 +1,9 @@
 /* projects */
 
-
 .section-projects {
-    height: 100vh;
+    /*height: 100vh;*/
+    height: calc(var(--vh) * 100); /* mobile fix for browser navbar shrink */
+    width: 100%;
     scroll-snap-align: start;
 }
 
@@ -18,8 +19,15 @@
     left: 50vw;
     transform: translate(-50%, -50%);
     font-family: 'Bebas Neue', cursive;
-    font-size: 128px;
+    font-size: clamp(36px, min(20vh, 20vw), 128px);
     line-height: 89%;
     text-align: center;
     color: var(--black);
 }
+
+@media only screen and (max-width: 799px) {
+    .projects-header {
+
+    }
+}
+

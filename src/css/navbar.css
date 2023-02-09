@@ -1,34 +1,103 @@
-.nav-desktop {
+.nav-root button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.nav-root button span {
+    writing-mode: vertical-lr;
+}
+
+.nav-root button:hover {
+    color: var(--white);
+    text-shadow: 0 0 2px var(--white);
+    transition: 0.2s;
+}
+
+ul.nav-items {
     position: fixed;
-    width: 106px;
+    width: 100px; /* fixed width as this will disappear if mobile */
     height: 100vh;
+    margin-top: clamp(60px, 10vh, 100px);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+
+ul.nav-items > li {
+    font: 20px "Montserrat", sans-serif;
+    writing-mode: vertical-lr;
+    margin-top: 54px;
+}
+
+ul.nav-items > li:first-of-type {
+    margin-top: calc(54px - 25px);
+}
+
+.nav-root {
+    position: fixed;
+    width: 100vw;
+    height: clamp(80px, 10vh, 100px);
     top: 0;
     background-color: var(--black);
     z-index: 10;
 }
 
 .nav-top-bar {
-    position: absolute;
+    position: fixed;
     width: 100vw;
-    height: 100px;
-    background-color: var(--black);
-    z-index: -1;
+    height: clamp(80px, 10vh, 100px);
+    z-index: 5;
 }
 
 .nav-logo {
-    margin-top: 27px;
+    transform: translate(calc(50px - 50%), 35px);
+    width: fit-content;
+    height: fit-content;
+    /*background-color: red;*/
 }
 
-.nav-logo-bracket {
-    font: 42px 'Montserrat', sans-serif;
+@media only screen and (max-width: 799px) {
+    .nav-logo {
+        transform: translate(5vw, 25px);
+    }
 }
 
 .nav-logo-letters {
-    font: 37px 'Bebas Neue', cursive;
+    font: 37px "Bebas Neue", cursive;
+    line-height: 89%;
 }
 
+.nav-logo-letters::before {
+    position: absolute;
+    left: -13px;
+    top: -15px;
+    content: "[";
+    font: 42px "Montserrat", sans-serif;
+    color: var(--dark);
+}
+
+.nav-logo-letters::after {
+    position: absolute;
+    top: -15px;
+    content: "]";
+    font: 42px "Montserrat", sans-serif;
+    color: var(--dark);
+}
+
+.nav-logo-bracket {
+    font: 42px "Montserrat", sans-serif;
+    color: var(--dark);
+}
+
+
 .nav-item-vertical {
-    font: 20px 'Montserrat', sans-serif;
+    font: 20px "Montserrat", sans-serif;
     writing-mode: vertical-lr;
     margin-top: 54px;
 }
@@ -40,5 +109,3 @@
 .nav-no-focus {
     color: var(--dark);
 }
-
-

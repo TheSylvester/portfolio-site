@@ -8,12 +8,13 @@ font-family: 'Montserrat', sans-serif;
 
 @import "./navbar.css";
 @import "./utilities.css";
-@import "./nameAndTitle.css";
+@import "devContainer.css";
 @import "./headshot.css";
 @import "./downArrow.css";
 @import "./tagline.css";
 @import "./projects.css";
 @import "./chromaGallery.css";
+@import "./hero.css";
 
 
 :root {
@@ -21,6 +22,9 @@ font-family: 'Montserrat', sans-serif;
     --white: #EAEAEA;
     --dark: #9E9E9E;
     --darker: #555555;
+    --windowWidth: 100%;
+    --windowHeight: 100%;
+    --vh: 10px;
 }
 
 html {
@@ -28,24 +32,22 @@ html {
     color: var(--white);
     font-family: 'Montserrat', sans-serif;
     scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
+    overflow-y: scroll;
+
 }
 
 body {
+    /*scroll-snap-type: y mandatory;*/
+    overflow-x: clip;
     /*height: 5000px;*/
-
-    height: 5000px;
+    /*overflow-x: hidden;*/
 }
 
 /* the app container */
 .app-container {
 }
 
-/* the logical page1 */
-.section-hero {
-    scroll-snap-align: start;
-    height: 100vh;
-    width: 100%;
-}
 
 .show-on-load {
 

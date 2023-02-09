@@ -1,68 +1,37 @@
 import { Navbar } from "./components/Navbar";
-import { NameAndTitle } from "./components/NameAndTitle";
-import { Headshot } from "./components/Headshot";
-import { ScrollDownIndicator } from "./components/ScrollDownIndicator";
-import { Tagline } from "./components/Tagline";
-import { siteAnimations } from "./SiteAnimations";
 
-import { useEffect } from "react";
-import chromaGalleryPic from "./assets/chromagallery_1920.png";
+import { WindowSizeProvider } from "./contexts/WindowSize";
+import useWindowSize from "./hooks/WindowSize";
+import { Hero } from "./components/Hero";
+import { Tagline } from "./components/Tagline";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CustomEase } from "gsap/CustomEase";
+import { Projects } from "./components/Projects";
+import { ChromaGallery } from "./components/ChromaGallery";
+
+gsap.registerPlugin(CustomEase);
+gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
-  useEffect(() => {
-    window.addEventListener("resize", (event) => {});
-    document.fonts.ready.then(siteAnimations);
-  }, []);
+  const size = useWindowSize(); // to trigger a state change on resize
+
+  // ScrollTrigger.normalizeScroll(true);
+  ScrollTrigger.config({ ignoreMobileResize: true });
 
   return (
     <div className={"app-container"}>
-      <Navbar />
-      <section className={"section-hero"}>
-        <NameAndTitle />
-        <Headshot />
-        <ScrollDownIndicator />
-      </section>
-      {/* tagline */}
-      <section className={"section-revealTagline"}>
+      <WindowSizeProvider value={size}>
+        <Navbar />
+        <Hero />
+        {/*<ScrollDownIndicator />*/}
         <Tagline />
-      </section>
-      <section className={"section-zoomTagline"}></section>
-      {/* work */}
-      <section className={"section-projects"}>
-        <div className={"projects-container"}>
-          <h1 className={"projects-header projects-fade-in"}>
-            Recent Projects
-          </h1>
-        </div>
-      </section>
-      <section className={"section-chromaGallery"}>
-        <img
-          className={"chroma-gallery-pic projects-fade-in"}
-          src={chromaGalleryPic}
-          alt="Chroma Gallery pic"
-        />
-        <div className={"chroma-gallery-block"}>
-          <h1 className={"chroma-gallery-title"}>Chroma Gallery</h1>
-          <p className={"chroma-gallery-paragraph"}>
-            Video gallery and file repository for Razer RGB lighting profiles
-            collected from Reddit via REST API and analyzed for searchability
-          </p>
-          <h2 className={"chroma-gallery-subheading"}>Built With:</h2>
-          <ul>
-            <li>React</li>
-            <li>NodeJS</li>
-            <li>Express</li>
-            <li>MongoDB</li>
-          </ul>
-          <div className={"chroma-gallery-footer"}>
-            <a href={"https://www.reddit.com"}>visit page</a> |{" "}
-            <a href={"https://www.reddit.com"}>source on Github</a>
-          </div>
-        </div>
-      </section>
-      <section style={{ height: "500vh", scrollSnapAlign: "start" }}>
-        <h1>Next Section</h1>
-      </section>
+        <Projects />
+        <ChromaGallery />
+        {/*<section style={{ height: "500vh", scrollSnapAlign: "start" }}>*/}
+        {/*  <h1>Next Section</h1>*/}
+        {/*</section>*/}
+      </WindowSizeProvider>
     </div>
   );
 };

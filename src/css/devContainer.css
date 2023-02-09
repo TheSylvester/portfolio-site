@@ -1,0 +1,51 @@
+/*Styles for the Dev Name and Dev Title, and its container */
+.dev-container {
+    position: fixed;
+    width: fit-content;
+    height: min(20vw, 144px);
+    transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+    z-index: 10;
+    /*background-color: blue;*/
+}
+
+.dev-frame {
+    width: max-content;
+}
+
+.dev-name {
+    font-size: clamp(45px, 8vw, 114px);
+    font-family: 'Bebas Neue', fantasy;
+    line-height: 89%;
+    /*line-height: 100%;*/
+    color: var(--white);
+    /*background-color: red;*/
+}
+
+.dev-title {
+    font-size: clamp(15px, 3vw, 39px);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-align: right;
+    line-height: 100%;
+    letter-spacing: -0.035em;
+    color: var(--dark);
+}
+
+@media only screen and (max-width: 799px) {
+    .dev-container {
+        position: fixed;
+        width: fit-content;
+        transform: translate(calc(50vw - 50%), calc(clamp(60px, 10vh, 100px) + 5vh));
+        text-shadow: 0 0 5px var(--black);
+        z-index: 10;
+    }
+
+    .dev-name {
+        font-size: clamp(36px, 14vw, 114px);
+    }
+
+    .dev-title {
+        font-size: clamp(12px, 5vw, 39px);
+    }
+}
+

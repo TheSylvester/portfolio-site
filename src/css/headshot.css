@@ -1,10 +1,31 @@
 /* Styles for Developer Photo */
 
-img.headshot {
-    position: fixed;
-    top: 50%;
-    left: calc(50% + 200px);
-    width: 480px;
-    transform: translateY(-50%);
+.headshot-container {
+    position: absolute;
+    transform: translate(calc(50vw + min(14vw, 200px)), calc(50vh - 50%));
     z-index: -1;
+
+}
+
+img.headshot {
+    width: min(30vw, 480px);
+    /*z-index: -1;*/
+}
+
+@media only screen and (max-width: 799px) {
+    img.headshot {
+        width: min(80vw, 480px);
+    }
+
+    .headshot-container {
+        transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+    }
+}
+
+@media only screen and (max-height: 550px) {
+    img.headshot {
+        width: auto;
+        /*height: calc(98vh - 100px);*/
+        height: calc(var(--vh) * 98 - 100px); /* mobile fix for browser navbar shrink */
+    }
 }
