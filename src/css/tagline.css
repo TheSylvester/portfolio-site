@@ -1,13 +1,11 @@
 .section-tagline {
-    scroll-snap-align: start;
-    /*height: 100vh;*/
-    height: calc(var(--vh) * 100); /* mobile fix for browser navbar shrink */
+    /*scroll-snap-align: start;*/
+    height: 200vh;
+    /* testing 2 page scroll */
+    /*height: calc(var(--vh) * 100); !* mobile fix for browser navbar shrink *!*/
     width: 100vw;
     max-width: 100%;
-    position: relative;
     overflow: clip;
-
-    /*overflow: clip;*/
 }
 
 /* tagline box */

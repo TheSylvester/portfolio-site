@@ -44,7 +44,7 @@ export function ChromaGallery() {
     }
 
     function animatePicProjectsPopup(isDesktop) {
-      /* slide up pic at Projects start */
+      /* slide up pic at ProjectSection start */
 
       const tlSlidePicUp = gsap.timeline({ paused: true });
       tlSlidePicUp.fromTo(
@@ -72,7 +72,6 @@ export function ChromaGallery() {
         invalidateOnRefresh: true,
         immediateRender: false,
         animation: tlSlidePicUp,
-        markers: true,
       });
     }
 
@@ -134,14 +133,14 @@ export function ChromaGallery() {
       (context) => {
         let { isDesktop, isMobile } = context.conditions;
 
-        animatePicProjectsPopup(isDesktop); // onLoad Recent Projects page, pop up Pic
-        animatePicToChromaGallery(isDesktop, isMobile); // transition from Projects to Chroma Gallery
+        animatePicProjectsPopup(isDesktop); // onLoad Recent ProjectSection page, pop up Pic
+        animatePicToChromaGallery(isDesktop, isMobile); // transition from ProjectSection to Chroma Gallery
       }
     );
   }, [windowWidth, windowHeight]);
 
   return (
-    <section className={"section-chromaGallery"}>
+    <section className={"section-chroma-gallery"}>
       <div className={"pic-container"}>
         <img
           className={"chroma-gallery-pic"}

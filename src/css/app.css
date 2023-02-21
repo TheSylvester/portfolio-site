@@ -13,14 +13,15 @@ font-family: 'Montserrat', sans-serif;
 @import "./downArrow.css";
 @import "./tagline.css";
 @import "./projects.css";
-@import "./chromaGallery.css";
+/*@import "./chromaGallery.css";*/
 @import "./hero.css";
 
 
 :root {
     --black: #000000;
     --white: #EAEAEA;
-    --dark: #9E9E9E;
+    /*--dark: #9E9E9E;*/
+    --dark: #777777;
     --darker: #555555;
     --windowWidth: 100%;
     --windowHeight: 100%;
@@ -31,17 +32,13 @@ html {
     background-color: var(--black);
     color: var(--white);
     font-family: 'Montserrat', sans-serif;
-    scroll-snap-type: y mandatory;
-    scroll-snap-stop: always;
+    /*scroll-snap-type: y proximity;*/
+    /*scroll-snap-stop: always;*/
     overflow-y: scroll;
-
 }
 
 body {
-    /*scroll-snap-type: y mandatory;*/
     overflow-x: clip;
-    /*height: 5000px;*/
-    /*overflow-x: hidden;*/
 }
 
 /* the app container */

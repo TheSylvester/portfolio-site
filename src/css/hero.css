@@ -1,7 +1,7 @@
 /* the logical page1 */
 .section-hero {
-    position: relative;
-    scroll-snap-align: start;
+    /*position: relative;*/
+    /*scroll-snap-align: start;*/
     /*height: 100vh;*/
     height: calc(var(--vh) * 100); /* mobile fix for browser navbar shrink */
     width: 100vw;

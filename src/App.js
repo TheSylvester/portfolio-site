@@ -2,12 +2,13 @@ import { Navbar } from "./components/Navbar";
 
 import { WindowSizeProvider } from "./contexts/WindowSize";
 import useWindowSize from "./hooks/WindowSize";
-import { Hero } from "./components/Hero";
-import { Tagline } from "./components/Tagline";
+import { AnimatedHero, Hero } from "./components/Hero";
+// import { Tagline } from "./components/Tagline";
+import { TaglineCanvas } from "./components/TaglineCanvas";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/CustomEase";
-import { Projects } from "./components/Projects";
+import { ProjectSection } from "./components/ProjectSection";
 import { ChromaGallery } from "./components/ChromaGallery";
 
 gsap.registerPlugin(CustomEase);
@@ -23,11 +24,13 @@ const App = () => {
     <div className={"app-container"}>
       <WindowSizeProvider value={size}>
         <Navbar />
-        <Hero />
+        {/*<Hero />*/}
+        <AnimatedHero />
         {/*<ScrollDownIndicator />*/}
-        <Tagline />
-        <Projects />
-        <ChromaGallery />
+        {/*<Tagline />*/}
+        <TaglineCanvas />
+        <ProjectSection />
+        {/*<ChromaGallery />*/}
         {/*<section style={{ height: "500vh", scrollSnapAlign: "start" }}>*/}
         {/*  <h1>Next Section</h1>*/}
         {/*</section>*/}

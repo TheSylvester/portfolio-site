@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { debounce } from "../utilities/debounce";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,21 +20,22 @@ function useWindowSize() {
     // Then we set the value in the --vh custom property to the root of the document
     document.documentElement.style.setProperty("--vh", `${vh}px`);
     // end added
+
     // ScrollTrigger.refresh();   // let's not refresh scrolltrigger, mobile issues
     // ScrollTrigger.clearScrollMemory();
     // window.history.scrollRestoration = "manual";
     // console.log("Resized to: ", window.innerWidth, window.innerHeight);
+
     // window.location.reload(); // last resort
   };
 
   useEffect(() => {
+    const resize_debounced = debounce(resize, 300);
     resize(); // initial setting of size MIGHT be required?
-    // window.addEventListener("resize", () => setTimeout(resize, 500));
-    window.addEventListener("resize", resize);
+    // window.addEventListener("resize", resize_debounced);
     return () => {
       // cleanup the event listener
-      // window.removeEventListener("resize", () => setTimeout(resize, 500));
-      window.removeEventListener("resize", resize);
+      // window.removeEventListener("resize", resize_debounced);
     };
   }, [setSize]);
 

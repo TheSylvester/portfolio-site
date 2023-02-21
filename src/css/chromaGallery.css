@@ -1,5 +1,5 @@
 /* Chroma Gallery Section */
-.section-chromaGallery {
+.section-chroma-gallery {
     scroll-snap-align: start;
     position: relative;
     /*height: 100vh;*/
@@ -11,12 +11,14 @@
 }
 
 @media only screen and (min-width: 800px) {
-    .section-chromaGallery {
+    .section-chroma-gallery {
         padding-left: 100px; /* get me past the left nav if exists */
     }
 }
 
 img.chroma-gallery-pic {
+    border: 1px solid red;
+
     position: absolute;
     width: clamp(100px, min(100vh - 100px, 35vw), 700px);
     /*transform: translate(calc((50vw - 50px)), calc(80px + (100vh - 80px - 100%) / 2));*/
@@ -27,6 +29,8 @@ img.chroma-gallery-pic {
 }
 
 .chroma-gallery-container {
+    border: 1px solid blue;
+
     position: absolute;
     padding: 0 3vw;
     width: clamp(200px, 35vw, 550px);
@@ -36,12 +40,15 @@ img.chroma-gallery-pic {
 /* tablet mode, no padding left */
 @media only screen and (min-width: 500px) and (max-width: 799px) {
     img.chroma-gallery-pic {
+        border: 1px solid red;
+
         position: absolute;
         width: clamp(100px, min(100vh - 100px, 40vw), 700px);
         /*transform: translate(calc((50vw)), calc(80px + (100vh - 80px - 100%) / 2));*/
     }
 
     .chroma-gallery-container {
+        border: 1px solid blue;
         width: clamp(200px, 40vw, 550px);
         transform: translate(calc(50vw - 100%), calc(80px + (100vh - 80px - 100%) / 2));
     }

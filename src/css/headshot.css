@@ -1,7 +1,8 @@
 /* Styles for Developer Photo */
 
 .headshot-container {
-    position: absolute;
+    /*position: absolute;*/
+    position: fixed;
     transform: translate(calc(50vw + min(14vw, 200px)), calc(50vh - 50%));
     z-index: -1;
 
@@ -25,7 +26,7 @@ img.headshot {
 @media only screen and (max-height: 550px) {
     img.headshot {
         width: auto;
-        /*height: calc(98vh - 100px);*/
-        height: calc(var(--vh) * 98 - 100px); /* mobile fix for browser navbar shrink */
+        height: calc(98vh - 100px);
+        /*height: calc(var(--vh) * 98 - 100px); !* mobile fix for browser navbar shrink *!*/
     }
 }

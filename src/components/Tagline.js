@@ -7,7 +7,7 @@ import { CustomEase } from "gsap/CustomEase";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(CustomEase);
 
-const ZOOM_TEXT_WIPE_SCALE_MAX = 2;
+const ZOOM_TEXT_WIPE_SCALE_MAX = 400;
 const ZOOM_TEXT_WIPE_DURATION = 1.5;
 const TAGLINE_INFLATE_POINT = 0.5; // inverse; when to start scaling up Tagline
 
@@ -92,7 +92,6 @@ export function Tagline() {
         animation: tlZoomTaglineToWhite,
         scrub: ZOOM_TEXT_WIPE_DURATION,
         snap: [0, 1],
-        // markers: true,
       });
     }
 
@@ -100,10 +99,12 @@ export function Tagline() {
     mediaQuery.add(
       {
         isDesktop: "(min-width: 800px)",
-        isMobile: "(max-width: 799px)",
+        isTablet: "(min-width: 500px) and (max-width: 799px)",
+        isMobile: "(max-width: 499px)",
       },
-      () => {
-        animateSlideInTagline(taglineContainerRef);
+      (context) => {
+        const { isDesktop } = context.conditions;
+        isDesktop && animateSlideInTagline(taglineContainerRef);
         animateZoomTaglineToWhite(taglineContainerRef);
       }
     );
