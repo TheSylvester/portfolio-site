@@ -1,6 +1,5 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useState } from "react";
 import { CustomEase } from "gsap/CustomEase";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -170,8 +169,6 @@ const drawInCenter = (context, canvas, scale = startScale()) => {
 
   const adjustForLetterSpacing = isLetterSpacingSupported ? 0 : -16; // -2 x 8chars
 
-  console.log(isLetterSpacingSupported);
-
   draw({
     context,
     canvas,
@@ -182,7 +179,7 @@ const drawInCenter = (context, canvas, scale = startScale()) => {
   });
 };
 
-export const animateTaglineCanvas = ({ isDesktop, isTablet, isMobile }) => {
+export const animateTaglineCanvas = () => {
   let start = (x) => update(x);
 
   let canvas = document.getElementById("taglineCanvas");

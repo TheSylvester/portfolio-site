@@ -5,7 +5,7 @@ const isDesktop = "(min-width: 800px)";
 const isMobile = "(max-width: 799px)";
 const isTablet = "(min-width: 500px) and (max-width: 799px)";
 
-export const AddScrollAnimations = ({ Component, animations = [] }) => {
+export const useScrollAnimations = (animations = []) => {
   useLayoutEffect(() => {
     const mediaQuery = gsap.matchMedia();
     mediaQuery.add(
@@ -28,5 +28,4 @@ export const AddScrollAnimations = ({ Component, animations = [] }) => {
     );
     return () => mediaQuery.revert();
   }, [animations]);
-  return <Component />;
 };

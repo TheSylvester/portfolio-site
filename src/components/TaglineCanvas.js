@@ -1,7 +1,9 @@
-import { AddScrollAnimations } from "../utilities/AddScrollAnimations";
 import { animateTaglineCanvas } from "./animations/animateTaglineCanvas";
+import { useScrollAnimations } from "../hooks/ScrollAnimations";
 
-export const TaglineCanvas = () => {
+export const TaglineCanvas = ({ animations }) => {
+  useScrollAnimations(animations);
+
   return (
     <section className={"section-tagline"}>
       <canvas
@@ -16,8 +18,6 @@ export const TaglineCanvas = () => {
   );
 };
 
-export const AnimatedTaglineCanvas = () =>
-  AddScrollAnimations({
-    Component: TaglineCanvas,
-    animations: [animateTaglineCanvas],
-  });
+export const AnimatedTaglineCanvas = () => (
+  <TaglineCanvas animations={[animateTaglineCanvas]} />
+);

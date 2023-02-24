@@ -15,12 +15,14 @@ font-family: 'Montserrat', sans-serif;
 @import "./projects.css";
 /*@import "./chromaGallery.css";*/
 @import "./hero.css";
+@import "./portfolio.css";
 
 
 :root {
     --black: #000000;
     --white: #EAEAEA;
     /*--dark: #9E9E9E;*/
+    --light: #D9D9D9;
     --dark: #777777;
     --darker: #555555;
     --windowWidth: 100%;
