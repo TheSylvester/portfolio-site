@@ -1,0 +1,10 @@
+/* about section */
+
+.section-about {
+    background-color: var(--black);
+    padding: 5vh 0 5vh 0;
+    width: 100%;
+    height: 1080px;
+}
+
+

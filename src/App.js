@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/CustomEase";
 import { AnimatedProjectSection } from "./components/ProjectSection";
 import { AnimatedPortfolioSection } from "./components/PortfolioSection";
+import { AnimatedAboutSection } from "./components/AboutSection";
 
 gsap.registerPlugin(CustomEase);
 gsap.registerPlugin(ScrollTrigger);
@@ -16,11 +17,12 @@ const App = () => {
 
   return (
     <div className={"app-container"}>
-      <AnimatedNavBar />
       <AnimatedHero />
       <AnimatedTaglineCanvas />
       <AnimatedProjectSection />
       <AnimatedPortfolioSection />
+      <AnimatedAboutSection />
+      <AnimatedNavBar />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { useScrollAnimations } from "../hooks/ScrollAnimations";
 import { revealNavItems } from "./animations/revealNavItems";
 import { NavButton } from "./NavButton";
+import { highlightActiveSection } from "./animations/highlightActiveSection";
 
 const TopNavBlackBar = () => (
   <div className={"nav-top-bar"}>
@@ -11,14 +12,14 @@ const TopNavBlackBar = () => (
 function LeftNav() {
   return (
     <ul className={"nav-items"}>
-      <li className={"nav-no-focus"}>
+      <li className={"nav-no-focus projects"}>
         <NavButton scrollTo=".section-projects">projects</NavButton>
       </li>
-      <li className={"nav-no-focus"}>
-        <NavButton scrollTo=".section-projects">about</NavButton>
+      <li className={"nav-no-focus about"}>
+        <NavButton scrollTo=".section-about">about</NavButton>
       </li>
-      <li className={"nav-no-focus"}>
-        <NavButton scrollTo=".section-projects">contact</NavButton>
+      <li className={"nav-no-focus contact"}>
+        <NavButton scrollTo=".section-about">contact</NavButton>
       </li>
     </ul>
   );
@@ -50,5 +51,5 @@ export function Navbar({ animations = [] }) {
 
 export const AnimatedNavBar = () =>
   Navbar({
-    animations: [revealNavItems],
+    animations: [revealNavItems, highlightActiveSection],
   });

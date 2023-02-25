@@ -1,6 +1,7 @@
 import portfolioScreenshot from "../assets/portfolio-screenshot.png";
 import { revealPortfolio } from "./animations/revealPortfolio";
 import { useScrollAnimations } from "../hooks/ScrollAnimations";
+import { fadeToBlack } from "./animations/fadeToBlack";
 
 export const PortfolioSection = ({ animations }) => {
   useScrollAnimations(animations);
@@ -44,5 +45,5 @@ export const PortfolioSection = ({ animations }) => {
 };
 
 export const AnimatedPortfolioSection = () => (
-  <PortfolioSection animations={[revealPortfolio]} />
+  <PortfolioSection animations={[revealPortfolio, fadeToBlack]} />
 );
