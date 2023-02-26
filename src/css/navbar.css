@@ -45,7 +45,7 @@ ul.nav-items > li:first-of-type {
     height: clamp(80px, 10vh, 100px);
     top: 0;
     background-color: var(--black);
-    z-index: 10;
+    z-index: 5;
 }
 
 .nav-top-bar {
