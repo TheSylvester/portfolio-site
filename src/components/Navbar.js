@@ -3,7 +3,7 @@ import { revealNavItems } from "./animations/revealNavItems";
 import { NavButton } from "./NavButton";
 import { highlightActiveSection } from "./animations/highlightActiveSection";
 
-const TopNavBlackBar = () => (
+const TopNavBox = () => (
   <div className={"nav-top-bar"}>
     <Logo />
   </div>
@@ -43,7 +43,7 @@ export function Navbar({ animations = [] }) {
 
   return (
     <nav className={"nav-root"}>
-      <TopNavBlackBar />
+      <TopNavBox />
       {window.innerWidth > 800 && window.innerHeight > 500 && <LeftNav />}
     </nav>
   );

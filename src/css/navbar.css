@@ -41,8 +41,8 @@ ul.nav-items > li:first-of-type {
 
 .nav-root {
     position: fixed;
-    width: 100vw;
-    height: clamp(80px, 10vh, 100px);
+    width: 100px;
+    height: 100vh;
     top: 0;
     background-color: var(--black);
     z-index: 5;

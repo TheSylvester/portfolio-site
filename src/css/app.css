@@ -24,7 +24,8 @@ font-family: 'Montserrat', sans-serif;
     /*--dark: #9E9E9E;*/
     --light: #D9D9D9;
     --dark: #777777;
-    --darker: #555555;
+    /*--darker: #555555;*/
+    --darker: #454545;
     --windowWidth: 100%;
     --windowHeight: 100%;
     --vh: 10px;

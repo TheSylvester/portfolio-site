@@ -71,7 +71,7 @@ img.chroma-gallery-pic {
 
 .chroma-gallery-title {
     position: relative;
-    font: clamp(36px, min(20vh, 20vw), 64px) 'Bebas Neue', cursive;
+    font: clamp(36px, min(20vh, 20vw), 96px) 'Bebas Neue', cursive;
     color: var(--black);
 }
 
@@ -79,11 +79,12 @@ img.chroma-gallery-pic {
 .chroma-gallery-title::after {
     content: "";
     position: absolute;
-    top: calc(100% - clamp(16px, min(5vw, 8vh), 96px) * 0.17);
+    /*top: calc(100% - clamp(16px, min(5vw, 8vh), 96px) * 0.17);*/
+    top: calc(100% - clamp(16px, min(5vw, 8vh), 96px) * 0.3);
     width: 100%;
     left: 0;
     height: 1px;
-    border-radius: 2px;
+    border-radius: 3px;
     background: linear-gradient(to right, #FF0000, #FFFF00, #FFFF00, #00FFFF, #3300FF, #FF00FF);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
@@ -97,9 +98,10 @@ img.chroma-gallery-pic {
 .chroma-gallery-paragraph {
     /*margin: clamp(5px, min(2vw, 2vh), 40px) 0 clamp(5px, min(2vw, 2vh), 40px) 0;*/
     margin: 2vh 0 6vh 0;
-    font: 600 clamp(12px, min(2vw, 3vh), 21px) 'Montserrat', sans-serif;
+    font: clamp(12px, min(2vw, 3vh), 21px) 'Montserrat', sans-serif;
+    line-height: 140%;
     letter-spacing: -0.035em;
-    color: var(--dark);
+    color: var(--darker);
 }
 
 .chroma-gallery-screenshot {
@@ -108,6 +110,7 @@ img.chroma-gallery-pic {
     object-fit: cover;
     object-position: left top;
     z-index: -1;
+    border-radius: 3px;
 }
 
 .chroma-gallery-screenshot-container {
@@ -124,13 +127,18 @@ img.chroma-gallery-pic {
 }
 
 .built-panel {
+    display: flex;
+    flex-direction: column;
     width: max-content;
     height: fit-content;
-    padding: 25px;
     background-color: var(--light);
     color: var(--darker);
-    font: 600 24px 'Montserrat', sans-serif;
-    letter-spacing: -0.035em;
+    font: 600 16px 'Courier New', sans-serif;
+    letter-spacing: -0.05em;
+    /* styling */
+    filter: drop-shadow(0px 0px 4px rgb(0, 0, 0, 0.25));
+    border-radius: 3px;
+    border: none;
 }
 
 .chroma-gallery.built-panel {
@@ -140,20 +148,26 @@ img.chroma-gallery-pic {
 }
 
 .built-panel h3 {
-    font: 600 24px 'Montserrat', sans-serif;
-    color: var(--black);
+    padding: 16px;
+    color: var(--white);
+    background-color: var(--darker);
 }
 
 .built-panel ul {
-    margin: 30px 0 30px 0;
+    /*margin: 30px 0 30px 0;*/
+    padding: 8px;
 }
 
 
 .built-panel ul li {
-
+    margin-left: 1rem;
+    list-style-type: '>';
+    padding-inline-start: 8px;
+    line-height: 140%;
 }
 
 .built-panel a, .built-panel a:hover {
+    padding: 8px 16px 16px 16px;
     color: var(--darker);
     text-decoration: underline;
 }
@@ -169,7 +183,7 @@ img.chroma-gallery-pic {
 }
 
 .portfolio-frame h1 {
-    font: clamp(36px, min(20vh, 20vw), 64px) 'Bebas Neue', cursive;
+    font: clamp(36px, min(20vh, 20vw), 96px) 'Bebas Neue', cursive;
     color: var(--black);
 }
 
@@ -180,20 +194,22 @@ img.chroma-gallery-pic {
 .portfolio-frame p {
     margin-bottom: 4vh;
     width: 60%;
-    font: 600 clamp(12px, min(2vw, 3vh), 21px) 'Montserrat', sans-serif;
+    font: clamp(12px, min(2vw, 3vh), 21px) 'Montserrat', sans-serif;
+    line-height: 140%;
     letter-spacing: -0.035em;
-    color: var(--dark);
+    color: var(--darker);
 }
 
 .portfolio-frame h1 span::first-letter {
     display: inline-block;
-    font-size: clamp(48px, min(20vh, 20vw), 96px);
+    font-size: clamp(48px, min(20vh, 20vw), 128px);
 }
 
 .portfolio-screenshot {
     height: auto;
     width: 700px;
     margin: 0 auto 0 auto;
+    border-radius: 3px;
 }
 
 .portfolio.built-panel {

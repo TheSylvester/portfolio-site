@@ -33,7 +33,7 @@ export function ProjectSection({ animations = [] }) {
             className={"chroma-gallery-screenshot"}
           />
           <div className={"chroma-gallery built-panel"}>
-            <h3>Built with</h3>
+            <h3>&lt; Built with /&gt;</h3>
             <ul>
               <li>React</li>
               <li>NodeJS</li>
@@ -41,7 +41,7 @@ export function ProjectSection({ animations = [] }) {
               <li>MongoDB</li>
             </ul>
             <a
-              href={"https://www.github.com"}
+              href={"https://github.com/TheSylvester/Kung-Fu-Lighting-frontend"}
               target={"_blank"}
               rel={"noreferrer"}
             >

@@ -23,7 +23,7 @@ export const PortfolioSection = ({ animations }) => {
             className={"portfolio-screenshot"}
           />
           <div className={"portfolio built-panel"}>
-            <h3>Built with</h3>
+            <h3>&lt; Built with /&gt;</h3>
             <ul>
               <li>React</li>
               <li>GSAP</li>
@@ -31,7 +31,7 @@ export const PortfolioSection = ({ animations }) => {
               <li>HTML Canvas</li>
             </ul>
             <a
-              href={"https://www.github.com"}
+              href={"https://github.com/TheSylvester/portfolio-site"}
               target={"_blank"}
               rel={"noreferrer"}
             >

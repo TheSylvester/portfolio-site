@@ -1,5 +1,6 @@
 import { animateTaglineCanvas } from "./animations/animateTaglineCanvas";
 import { useScrollAnimations } from "../hooks/ScrollAnimations";
+import { fadeOutDevAndPic } from "./animations/fadeOutDevAndPic";
 
 export const TaglineCanvas = ({ animations }) => {
   useScrollAnimations(animations);
@@ -19,5 +20,5 @@ export const TaglineCanvas = ({ animations }) => {
 };
 
 export const AnimatedTaglineCanvas = () => (
-  <TaglineCanvas animations={[animateTaglineCanvas]} />
+  <TaglineCanvas animations={[fadeOutDevAndPic, animateTaglineCanvas]} />
 );
