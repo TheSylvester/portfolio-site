@@ -26,7 +26,7 @@ export const highlightActiveSection = () => {
       trigger,
       endTrigger: endTrigger ?? trigger,
       start: "top bottom",
-      end: "bottom bottom",
+      end: endTrigger ? "bottom bottom" : "max",
       onEnter: () => fadeTo({ target, color: "var(--white)" }),
       onLeave: () => fadeTo({ target, color: "var(--dark)" }),
       onEnterBack: () => fadeTo({ target, color: "var(--white)" }),

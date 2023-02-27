@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 
-export const staggeredReveal = (targets) => {
+export const staggeredReveal = (targets) =>
   gsap.fromTo(
     targets,
     { opacity: 0 },
@@ -10,4 +10,3 @@ export const staggeredReveal = (targets) => {
       duration: 1,
     }
   );
-};

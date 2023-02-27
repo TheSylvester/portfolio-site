@@ -21,8 +21,8 @@ font-family: 'Montserrat', sans-serif;
 :root {
     --black: #000000;
     --white: #EAEAEA;
-    /*--dark: #9E9E9E;*/
     --light: #D9D9D9;
+    --semi-light: #9E9E9E;
     --dark: #777777;
     /*--darker: #555555;*/
     --darker: #454545;
