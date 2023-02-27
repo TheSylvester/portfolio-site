@@ -22,7 +22,7 @@ export const revealProjectsTitleAndImage = () => {
     trigger: ".projects-header",
     start: "center center",
     end: "top top",
-    toggleActions: "play complete reverse reverse",
+    toggleActions: "play none reverse reverse",
     invalidateOnRefresh: true,
     immediateRender: false,
     animation: tlProjectsReveal,

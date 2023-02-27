@@ -151,6 +151,7 @@ img.chroma-gallery-pic {
     padding: 16px;
     color: var(--white);
     background-color: var(--darker);
+    border-radius: 3px 3px 0 0;
 }
 
 .built-panel ul {
@@ -214,7 +215,7 @@ img.chroma-gallery-pic {
 
 .portfolio.built-panel {
     position: absolute;
-    right: -200px;
+    right: -150px;
     bottom: 30px;
 }
 

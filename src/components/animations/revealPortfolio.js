@@ -24,7 +24,7 @@ export const revealPortfolio = () => {
   /* Reveal when cross threshold (prev page disappears) */
   ScrollTrigger.create({
     trigger: ".section-portfolio",
-    start: "top 75%",
+    start: "top 60%",
     end: "top center",
     toggleActions: "play none reverse reverse",
     invalidateOnRefresh: true,

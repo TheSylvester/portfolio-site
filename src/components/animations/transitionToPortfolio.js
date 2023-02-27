@@ -33,7 +33,7 @@ export const transitionToPortfolio = () => {
     // trigger: ".chroma-gallery-container",
     // endTrigger: ".chroma-gallery-screenshot-container",
     trigger: ".section-projects",
-    start: "bottom 75%",
+    start: "bottom 60%",
     end: "+=30%",
     toggleActions: "play none reverse reverse",
     invalidateOnRefresh: true,
