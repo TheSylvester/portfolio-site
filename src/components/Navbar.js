@@ -34,7 +34,7 @@ const Logo = () => (
         .scrollIntoView({ behavior: "smooth" })
     }
   >
-    <span className={"nav-logo-letters nav-focus"}>SW</span>
+    <span className={"nav-logo-letters"}>SW</span>
   </div>
 );
 
