@@ -6,6 +6,7 @@
     transform: translate(calc(50vw - 50%), calc(50vh - 50%));
     z-index: 10 !important;
     /*background-color: blue;*/
+    --char: 39px;
 }
 
 .dev-frame {
@@ -29,7 +30,18 @@
     line-height: 100%;
     letter-spacing: -0.035em;
     color: var(--dark);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: relative;
+
 }
+
+/* flipBanner */
+
+
+/* flipBanner ends */
+
 
 @media only screen and (max-width: 799px) {
     .dev-container {

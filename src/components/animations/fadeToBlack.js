@@ -15,7 +15,7 @@ export const fadeToBlack = () => {
   ScrollTrigger.create({
     trigger: ".section-portfolio",
     start: "bottom 75%",
-    end: "bottom 25%",
+    end: "bottom 15%",
     // toggleActions: "play none reverse reverse",
     invalidateOnRefresh: true,
     immediateRender: false,

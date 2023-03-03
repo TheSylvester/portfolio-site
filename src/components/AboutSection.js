@@ -27,8 +27,8 @@ export const AboutSection = ({ animations }) => {
         </div>
         <div className={"about-grid paragraph-1"}>
           <p>
-            Hi 👋. I'm <em>Sylvester Wong</em>, a full stack web developer from
-            Toronto with a passion for technology, video games, and furry
+            Hi 👋. I'm <em>Sylvester Wong</em>, a<br /> full stack web developer
+            from Toronto with a passion for technology, video games, and furry
             friends.
             <br /> <span className={"red-heart"}>♥</span> 🎮 🐱 🐶
           </p>
@@ -36,14 +36,14 @@ export const AboutSection = ({ animations }) => {
         <div className={"about-grid paragraph-2"}>
           <p>
             When I'm not building web apps and learning new things, I spend my
-            free time mastering video games, playing fetch with the cat, and
-            touching grass with the dog.
+            free time mastering games, playing fetch with the cat, and touching
+            grass with the dog.
           </p>
         </div>
         <div className={"about-grid paragraph-3"}>
           <p>
             If you’re looking for a friendly Full-Stack developer with
-            experience in Javascript or Unity 3D, I got you! 🙂 👍
+            experience in Javascript or Unity 3D, I got you! 😉 👍
           </p>
         </div>
         <div className={"about-grid bottom-spacer"}></div>

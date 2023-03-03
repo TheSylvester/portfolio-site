@@ -8,7 +8,7 @@ font-family: 'Montserrat', sans-serif;
 
 @import "./navbar.css";
 @import "./utilities.css";
-@import "devContainer.css";
+@import "./devContainer.css";
 @import "./headshot.css";
 @import "./downArrow.css";
 @import "./tagline.css";
@@ -16,6 +16,7 @@ font-family: 'Montserrat', sans-serif;
 @import "./hero.css";
 @import "./portfolio.css";
 @import "./about.css";
+@import "./flipBanner.css";
 
 
 :root {
