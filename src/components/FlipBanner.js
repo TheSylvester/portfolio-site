@@ -7,7 +7,9 @@ const FONT_SIZE_MAX = 39;
 const FONT_SIZE_MID_VW = 3;
 const LINE_HEIGHT = 1.2;
 
-const DELAY_CHANGE_LETTER = 0.3;
+const LETTER_TRANSITION_DURATION_S = 1;
+const DELAY_CHANGE_LETTER_S = 0.2;
+
 const DELAY_SPACER_CHARACTER_SWAP_MS = 500;
 const WIDTH_CHANGE_DURATION_MS = 2000;
 const INTERVAL_DURATION_MS = 5000;
@@ -37,7 +39,11 @@ export const FlipBanner = ({ bannerText = [] }) => {
       /* slide the letter-pillar into place for the new char */
       const topPosition = fontSize * -letters.indexOf(char) * LINE_HEIGHT;
       pillarElement.style.transitionDelay =
-        1 - index * 0.1 + DELAY_CHANGE_LETTER + "s";
+        // 1 - index * 0.1 + DELAY_CHANGE_LETTER_S + "s";
+        LETTER_TRANSITION_DURATION_S -
+        (LETTER_TRANSITION_DURATION_S * index) / maxLength +
+        DELAY_CHANGE_LETTER_S +
+        "s";
       pillarElement.style.top = topPosition + "px";
 
       /* change the spacer element */
@@ -99,7 +105,7 @@ export const FlipBanner = ({ bannerText = [] }) => {
 
     const interval = setInterval(() => {
       changeColor(COLOUR_HOT);
-      changeWidth(fontSize);
+      changeWidth(fontSize * 0.8);
       wordIndex = wrap(wordIndex + 1, 0, paddedStrings.length);
       changeWord(paddedStrings[wordIndex]);
       setTimeout(() => {
