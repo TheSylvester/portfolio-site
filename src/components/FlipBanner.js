@@ -10,9 +10,9 @@ const LINE_HEIGHT = 1.2;
 const DELAY_CHANGE_LETTER = 0.3;
 const DELAY_SPACER_CHARACTER_SWAP_MS = 500;
 const WIDTH_CHANGE_DURATION_MS = 2000;
-const INTERVAL_DURATION_MS = 4000;
+const INTERVAL_DURATION_MS = 5000;
 
-const COLOUR_HOT = "red";
+const COLOUR_HOT = "#EAEAEA";
 const COLOUR_COLD = "#777777";
 
 export const FlipBanner = ({ bannerText = [] }) => {
