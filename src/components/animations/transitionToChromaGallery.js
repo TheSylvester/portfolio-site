@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export const transitionToChromaGallery = () => {
+export const transitionToChromaGallery = ({ isDesktop }) => {
   let tlTitleReveal = gsap.timeline({ paused: true });
   tlTitleReveal.fromTo(
     ".chroma-gallery-title",
@@ -28,21 +28,26 @@ export const transitionToChromaGallery = () => {
 
   /* shrink pic */
   let tlShrinkPic = gsap.timeline({ paused: true });
-  tlShrinkPic.to(".chroma-gallery-pic", {
-    scale: 0.5,
-    x: () => {
-      const currentX = document
-        .querySelector(".chroma-gallery-pic")
-        .getBoundingClientRect().x;
-      const blockRight = document
-        .querySelector(".chroma-gallery-container")
-        .getBoundingClientRect().right;
-      return -currentX + blockRight + window.innerWidth * 0.01;
-    },
-    y: () => "60%",
-  });
+  const shrinkVars = isDesktop
+    ? {
+      scale: 0.5,
+      x: () => {
+        const currentX = document
+          .querySelector(".chroma-gallery-pic")
+          .getBoundingClientRect().x;
+        const blockRight = document
+          .querySelector(".chroma-gallery-container")
+          .getBoundingClientRect().right;
+        return -currentX + blockRight + window.innerWidth * 0.01;
+      },
+      y: () => "60%",
+    }
+    : {
+      scale: 0.5,
+    };
+  tlShrinkPic.to(".chroma-gallery-pic", shrinkVars);
 
-  ScrollTrigger.create({
+  const shrinkTriggerVars = isDesktop ? {
     trigger: ".pic-container",
     start: "top top",
     // end: "bottom 100px",
@@ -51,7 +56,19 @@ export const transitionToChromaGallery = () => {
     toggleActions: "play none reverse reverse",
     invalidateOnRefresh: true,
     immediateRender: false,
-  });
+  } : {
+    trigger: ".pic-container",
+    start: "top top",
+    // end: "bottom 100px",
+    end: "center top",
+    animation: tlShrinkPic,
+    // toggleActions: "play none reverse reverse",
+    scrub: true,
+    invalidateOnRefresh: true,
+    immediateRender: false,
+  }
+
+  ScrollTrigger.create(shrinkTriggerVars);
 
   /* reveal title */
   ScrollTrigger.create({

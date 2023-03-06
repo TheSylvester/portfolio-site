@@ -2,7 +2,6 @@
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { CustomEase } from "gsap/CustomEase";
 
 const LEFT_NAV_PADDING = 100;
 const TOP_NAV_PADDING_DESKTOP = 35;

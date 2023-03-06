@@ -15,12 +15,17 @@
     justify-content: flex-end;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     color: var(--dark);
-    --fontSize: clamp(15px, 3vw, 39px);
+    /*--fontSize: clamp(15px, 3vw, 39px);*/
+    --fontSize: 0;
 }
 
 .character {
     position: relative;
     color: transparent; /* characters for positioning only */
+
+    /* test */
+    /*height: calc(var(--fontSize) * 1.2);*/
+    /*height: min-content;*/
 
     /* animations */
     width: auto;

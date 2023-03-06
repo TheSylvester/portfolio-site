@@ -6,6 +6,7 @@ font-family: 'Bebas Neue', cursive;
 font-family: 'Montserrat', sans-serif;
  */
 
+/* desktop */
 @import "./navbar.css";
 @import "./utilities.css";
 @import "./devContainer.css";
@@ -17,6 +18,11 @@ font-family: 'Montserrat', sans-serif;
 @import "./portfolio.css";
 @import "./about.css";
 @import "./flipBanner.css";
+
+/* media queries */
+@import "./projects-sm.css";
+@import "./portfolio-sm.css";
+@import "./about-sm.css";
 
 
 :root {

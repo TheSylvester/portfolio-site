@@ -1,0 +1,33 @@
+@media only screen and (max-width: 799px) {
+
+    .section-projects {
+        --picWidth: clamp(200px, 85vw, 500px);
+    }
+
+    img.chroma-gallery-pic {
+        /*width: clamp(100px, min(100vh - 100px, 35vw), 700px);*/
+        width: max(200px, 70vw);
+        transform-origin: bottom left;
+        filter: drop-shadow(0px 0px 5px var(--white));
+        z-index: 10;
+    }
+
+    .chroma-gallery-container {
+        /*margin-left: calc(50vw - 490px);*/
+        width: clamp(200px, 85vw, 400px);
+        margin-top: 2vh;
+        margin-left: 5vw
+    }
+
+    .chroma-gallery-title {
+        font: clamp(36px, min(20vh, 15vw), 72px) 'Bebas Neue', cursive;
+    }
+
+    .chroma-gallery.built-panel {
+        position: absolute;
+        left: auto;
+        right: -5vw;
+        bottom: 30px;
+    }
+}
+

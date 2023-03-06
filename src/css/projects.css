@@ -4,29 +4,18 @@
     width: 100%;
     background-color: var(--white);
     --imgOffsetPercent: 0.09;
-    --picWidth: clamp(100px, min(100vh - 100px, 35vw), 700px);
+    /*--picWidth: clamp(100px, min(100vh - 100px, 35vw), 700px);*/
+    --picWidth: clamp(500px, min(100vh - 100px, 35vw), 700px);
     height: max-content;
     padding-bottom: 5vh;
 }
 
-/*.projects-container {*/
-/*    position: relative;*/
-/*    width: 100%;*/
-/*    height: calc(var(--vh) * 100); !* mobile fix for browser navbar shrink *!*/
-/*}*/
-
 .projects-header {
     font-family: 'Bebas Neue', cursive;
-    font-size: clamp(36px, min(20vh, 20vw), 128px);
+    font-size: clamp(72px, min(15vh, 12vw), 128px);
     line-height: 89%;
     text-align: center;
     color: var(--black);
-}
-
-@media only screen and (max-width: 799px) {
-    .projects-header {
-
-    }
 }
 
 .section-chroma-gallery {
@@ -50,8 +39,9 @@ img.chroma-gallery-pic {
     z-index: 10;
 }
 
+
 .chroma-gallery-container {
-    margin-left: calc(50vw - 490px);
+    margin-left: max(150px, calc(50vw - 490px));
     width: 515px;
     margin-top: 2vh;
     /*margin-left: calc(50vw - 490px);*/
@@ -60,18 +50,12 @@ img.chroma-gallery-pic {
 .chroma-gallery-title-container {
     /* this contains the underline */
     width: fit-content;
-    /*width: 515px;*/
-    /*margin: 5vh calc(50vh - var(--picWidth) / 2 - var(--picWidth) * var(--imgOffsetPercent)) 0 auto;*/
-    /*margin-top: 2vh;*/
-    /*margin-left: calc(50vh - (50vh - 471px));*/
-    /*margin-left: calc(50vw - 490px);*/
-    /*margin-left: calc(50vw - var(--picWidth) / 2 - var(--picWidth) * var(--imgOffsetPercent));*/
-    /*margin-right: auto;*/
 }
 
 .chroma-gallery-title {
     position: relative;
-    font: clamp(36px, min(20vh, 20vw), 96px) 'Bebas Neue', cursive;
+    font: clamp(36px, min(10vh, 9vw), 96px) 'Bebas Neue', cursive;
+
     color: var(--black);
 }
 
@@ -91,14 +75,12 @@ img.chroma-gallery-pic {
 
 .chroma-gallery-paragraph-container {
     margin: 5vh auto 0 calc(50vw - var(--picWidth) / 2 - var(--picWidth) * var(--imgOffsetPercent));
-    /*width: calc(var(--picWidth) * var(--imgOffsetPercent) * 2 + var(--picWidth));*/
     width: calc(var(--picWidth) * var(--imgOffsetPercent) + var(--picWidth) / 2);
 }
 
 .chroma-gallery-paragraph {
-    /*margin: clamp(5px, min(2vw, 2vh), 40px) 0 clamp(5px, min(2vw, 2vh), 40px) 0;*/
     margin: 2vh 0 6vh 0;
-    font: clamp(12px, min(2vw, 3vh), 21px) 'Montserrat', sans-serif;
+    font: clamp(16px, min(2vw, 5vh), 21px) 'Montserrat', sans-serif;
     line-height: 140%;
     letter-spacing: -0.035em;
     color: var(--darker);
@@ -172,50 +154,3 @@ img.chroma-gallery-pic {
     color: var(--darker);
     text-decoration: underline;
 }
-
-.portfolio-container {
-    position: relative;
-}
-
-.portfolio-frame {
-    position: relative;
-    margin: 0 auto 5vh auto;
-    width: min-content;
-}
-
-.portfolio-frame h1 {
-    font: clamp(36px, min(20vh, 20vw), 96px) 'Bebas Neue', cursive;
-    color: var(--black);
-}
-
-.portfolio-frame h1 span {
-    display: inline-block;
-}
-
-.portfolio-frame p {
-    margin-bottom: 4vh;
-    width: 60%;
-    font: clamp(12px, min(2vw, 3vh), 21px) 'Montserrat', sans-serif;
-    line-height: 140%;
-    letter-spacing: -0.035em;
-    color: var(--darker);
-}
-
-.portfolio-frame h1 span::first-letter {
-    display: inline-block;
-    font-size: clamp(48px, min(20vh, 20vw), 128px);
-}
-
-.portfolio-screenshot {
-    height: auto;
-    width: 700px;
-    margin: 0 auto 0 auto;
-    border-radius: 3px;
-}
-
-.portfolio.built-panel {
-    position: absolute;
-    right: -150px;
-    bottom: 30px;
-}
-

@@ -1,0 +1,30 @@
+@media only screen and (max-width: 799px) {
+
+    .portfolio-frame {
+        position: relative;
+        margin: 0 auto 5vh 5vw;
+        padding: 0;
+        width: min-content;
+    }
+
+    .portfolio-frame h1 {
+        font: clamp(36px, min(20vh, 15vw), 72px) 'Bebas Neue', cursive;
+    }
+
+    .portfolio-screenshot {
+        width: 90vw;
+        margin: 0 auto 15vh auto;
+        border-radius: 3px;
+    }
+
+    .portfolio-frame p {
+        width: clamp(200px, 90%, 550px);
+    }
+
+    .portfolio.built-panel {
+        left: -1vw;
+        right: auto;
+        bottom: -5vh;
+    }
+
+}

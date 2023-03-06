@@ -9,7 +9,7 @@ const TopNavBox = () => (
   </div>
 );
 
-function LeftNav() {
+const LeftNav = () => {
   return (
     <ul className={"nav-items"}>
       <li className={"nav-no-focus projects"}>
@@ -23,7 +23,7 @@ function LeftNav() {
       </li>
     </ul>
   );
-}
+};
 
 const Logo = () => (
   <div

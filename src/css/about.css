@@ -3,31 +3,35 @@
 .section-about {
     background-color: var(--black);
     width: 100%;
-    /*overflow-y: clip;*/
+    --boxWidth: min(25vw, 360px);
+    --boxHeight: min(42vw, 600px);
+    --thinBoxWidth: min(17vw, 250px);
+    --gridGap: min(2vw, 30px);
+    --heartSize: min(2.2vw, 32px);
+    --fontSize: min(1.67vw, 24px);
 }
 
 .about-frame {
     display: grid;
-    /*height: 100vh;*/
     margin-left: 100px;
     width: calc(100vw - 100px);
-    grid-template-columns: 360px 360px 360px auto 250px;
-    grid-template-rows: 600px auto;
-    grid-gap: 30px;
+    grid-template-columns: var(--boxWidth) var(--boxWidth) var(--boxWidth) auto var(--thinBoxWidth);
+    grid-template-rows: var(--boxHeight) auto;
+    grid-gap: var(--gridGap);
 }
 
 .bio-pic {
-    width: 360px;
-    height: 600px;
+    width: var(--boxWidth);
+    height: var(--boxHeight);
 }
 
 .luna-pic {
-    width: 250px;
+    width: var(--thinBoxWidth);
 }
 
 .astra-pic {
-    width: 250px;
-    height: calc(100vh - 600px);
+    width: var(--thinBoxWidth);
+    height: calc(100vh - var(--boxHeight));
     object-fit: cover;
 }
 
@@ -50,7 +54,7 @@
 }
 
 .about-grid p {
-    font: 24px 'Montserrat', sans-serif;
+    font: var(--fontSize) 'Montserrat', sans-serif;
     color: var(--semi-light);
     letter-spacing: -0.05em;
     line-height: 140%;
@@ -61,6 +65,6 @@
 }
 
 .about-grid .red-heart {
-    font-size: 32px;
+    font-size: var(--heartSize);
     color: red;
 }

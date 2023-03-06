@@ -37,14 +37,14 @@ const fadeIn = (
   });
 };
 
-export const fadeInAbout = () => {
+export const fadeInAbout = ({ isDesktop }) => {
   fadeIn(
     ".about-frame > *",
     {
       trigger: ".section-about",
-      start: "top 5%",
-      end: "max",
-      toggleActions: "play none reverse reverse",
+      start: () => (isDesktop ? "top 25%" : "top 75%"),
+      end: () => (isDesktop ? "top 25%" : "top 75%"),
+      toggleActions: "play none none none",
     },
     { xPercent: 5, yPercent: 0 }
   );

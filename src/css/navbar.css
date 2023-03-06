@@ -53,6 +53,7 @@ ul.nav-items > li:first-of-type {
     width: 100vw;
     height: clamp(80px, 10vh, 100px);
     z-index: 5;
+    /*background-color: var(--black);*/
 }
 
 .nav-logo {
@@ -60,13 +61,24 @@ ul.nav-items > li:first-of-type {
     transform: translate(calc(50px - 50%), 35px);
     width: fit-content;
     height: fit-content;
-    /*background-color: red;*/
 }
 
 @media only screen and (max-width: 799px) {
     .nav-logo {
         transform: translate(5vw, 25px);
     }
+
+    .nav-root {
+        width: 80px;
+        height: 80px;
+        background-color: transparent;
+    }
+
+    .nav-top-bar {
+        /*height: 80px;*/
+        width: 80px;
+    }
+
 }
 
 .nav-logo-letters {

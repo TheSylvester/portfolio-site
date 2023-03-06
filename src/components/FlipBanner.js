@@ -4,7 +4,7 @@ import { clamp } from "../utilities/clamp";
 
 const FONT_SIZE_MIN = 15;
 const FONT_SIZE_MAX = 39;
-const FONT_SIZE_MID_VW = 3;
+const FONT_SIZE_MID_VW = window.innerWidth > 799 ? 3 : 5;
 const LINE_HEIGHT = 1.2;
 
 const LETTER_TRANSITION_DURATION_S = 1;

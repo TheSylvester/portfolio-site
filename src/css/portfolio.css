@@ -2,3 +2,52 @@
     background-color: var(--white);
     padding: 5vh 0 5vh 0;
 }
+
+
+.portfolio-container {
+    position: relative;
+}
+
+.portfolio-frame {
+    position: relative;
+    margin: 0 auto 5vh auto;
+    width: min-content;
+    padding-left: 150px;
+}
+
+.portfolio-frame h1 {
+    font: clamp(36px, min(8vh, 8vw), 96px) 'Bebas Neue', cursive;
+    color: var(--black);
+}
+
+.portfolio-frame h1 span {
+    display: inline-block;
+}
+
+.portfolio-frame p {
+    margin-bottom: 4vh;
+    width: max(500px, 60%);
+    font: clamp(16px, min(2vw, 5vh), 21px) 'Montserrat', sans-serif;
+    line-height: 140%;
+    letter-spacing: -0.035em;
+    color: var(--darker);
+}
+
+.portfolio-frame h1 span::first-letter {
+    display: inline-block;
+    font-size: clamp(48px, min(20vh, 20vw), 128px);
+}
+
+.portfolio-screenshot {
+    height: auto;
+    width: min(calc(90vw - 150px), 700px);
+    margin: 0 auto 0 auto;
+    border-radius: 3px;
+}
+
+.portfolio.built-panel {
+    position: absolute;
+    right: -150px;
+    bottom: 30px;
+}
+
