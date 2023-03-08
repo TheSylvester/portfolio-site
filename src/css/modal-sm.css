@@ -1,0 +1,16 @@
+@media only screen and (max-width: 799px) {
+    .modal-body {
+        width: 80%;
+        padding: 30px 5px;
+    }
+
+    .modal-body div.contact {
+        margin: 2vh auto;
+        width: 100%;
+    }
+
+    div.contact > div {
+        margin: 1rem 0.5rem;
+        padding: 1rem 1vw;
+    }
+}

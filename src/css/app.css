@@ -24,6 +24,7 @@ font-family: 'Montserrat', sans-serif;
 @import "./projects-sm.css";
 @import "./portfolio-sm.css";
 @import "./about-sm.css";
+@import "./modal-sm.css";
 
 
 :root {

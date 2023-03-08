@@ -18,10 +18,25 @@
     background-color: var(--black);
     margin: auto auto;
     padding: 20px;
-    width: 50%;
+    width: max(600px, 50%);
     border: 5px solid var(--white);
     border-radius: 3px;
+    animation-name: reveal;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
 }
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
 
 .modal-body .close-button {
     position: absolute;
