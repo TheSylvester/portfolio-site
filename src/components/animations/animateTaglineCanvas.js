@@ -231,5 +231,13 @@ export const animateTaglineCanvas = () => {
     immediateRender: false,
   });
 
+  /* push the scrolling along so user doesn't sit on white space too long */
+  ScrollTrigger.create({
+    trigger: ".section-tagline",
+    start: "80% bottom",
+    end: "bottom 25%",
+    snap: [100],
+  });
+
   start(0);
 };

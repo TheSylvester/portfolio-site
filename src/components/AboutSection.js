@@ -3,9 +3,12 @@ import bioPic from "../assets/pic-bio-1200p.png";
 import astraPic from "../assets/astra1.png";
 import lunaPic from "../assets/luna-pic-1200p.png";
 import { fadeInAbout } from "./animations/fadeInAbout";
+import { useModalContext } from "../contexts/ModalContext";
 
 export const AboutSection = ({ animations }) => {
   useScrollAnimations(animations);
+  const { showModal } = useModalContext();
+
   return (
     <section className={"section-about"}>
       <div className={"about-frame"}>
@@ -45,6 +48,9 @@ export const AboutSection = ({ animations }) => {
             If you’re looking for a friendly Full-Stack developer with
             experience in Javascript or Unity 3D, I got you! 😉 👍
           </p>
+          <button className={"email-button"} onClick={showModal}>
+            ✉ Contact me
+          </button>
         </div>
         <div className={"about-grid bottom-spacer"}></div>
       </div>

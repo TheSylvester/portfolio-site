@@ -20,7 +20,9 @@ export function ProjectSection({ animations = [] }) {
       </div>
       <div className={"chroma-gallery-container"}>
         <div className={"chroma-gallery-title-container"}>
-          <h1 className={"chroma-gallery-title"}>Chroma Gallery</h1>
+          <a href={"https://razerchroma.gallery"}>
+            <h1 className={"chroma-gallery-title"}>Chroma Gallery</h1>
+          </a>
         </div>
         <p className={"chroma-gallery-paragraph"}>
           Video gallery and file repository for Razer RGB lighting profiles

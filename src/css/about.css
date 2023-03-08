@@ -68,3 +68,21 @@
     font-size: var(--heartSize);
     color: red;
 }
+
+.about-grid .email-button {
+    background-color: var(--black);
+    border-radius: 3px;
+    width: 100%;
+    color: var(--white);
+    font: calc(var(--fontSize) * 1.5) 'Bebas Neue', cursive;
+    border: 2px solid var(--white);
+    margin-top: var(--fontSize);
+    padding: 5px;
+}
+
+.about-grid .email-button:hover {
+    background-color: var(--white);
+    color: var(--black);
+    transition: 1s all ease;
+    cursor: pointer;
+}

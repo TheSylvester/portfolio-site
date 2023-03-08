@@ -2,6 +2,7 @@ import { useScrollAnimations } from "../hooks/ScrollAnimations";
 import { revealNavItems } from "./animations/revealNavItems";
 import { NavButton } from "./NavButton";
 import { highlightActiveSection } from "./animations/highlightActiveSection";
+import { useModalContext } from "../contexts/ModalContext";
 
 const TopNavBox = () => (
   <div className={"nav-top-bar"}>
@@ -10,6 +11,8 @@ const TopNavBox = () => (
 );
 
 const LeftNav = () => {
+  const { showModalState, showModal, hideModal } = useModalContext();
+
   return (
     <ul className={"nav-items"}>
       <li className={"nav-no-focus projects"}>
@@ -19,7 +22,12 @@ const LeftNav = () => {
         <NavButton scrollTo=".section-about">about</NavButton>
       </li>
       <li className={"nav-no-focus contact"}>
-        <NavButton scrollTo=".section-about">contact</NavButton>
+        {/*<NavButton scrollTo=".section-about">contact</NavButton>*/}
+        <div>
+          <button onClick={showModalState ? hideModal : showModal}>
+            <span>contact</span>
+          </button>
+        </div>
       </li>
     </ul>
   );

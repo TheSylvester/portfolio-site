@@ -1,0 +1,138 @@
+.modal-background {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    /*border: 1px solid red;*/
+}
+
+.modal-body {
+    position: relative;
+    background-color: var(--black);
+    margin: auto auto;
+    padding: 20px;
+    width: 50%;
+    border: 5px solid var(--white);
+    border-radius: 3px;
+}
+
+.modal-body .close-button {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid var(--darker);
+    border-radius: 3px;
+    color: var(--white);
+}
+
+.modal-body .close-button:hover {
+    background-color: orangered;
+    transition: 0.5s ease;
+    border-color: var(--white);
+}
+
+
+.modal-body div.contact {
+    margin: 2vh auto;
+    width: min(90%, 500px);
+}
+
+.contact h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: clamp(48px, min(12vh, 10vw), 96px);
+    line-height: 89%;
+}
+
+div.contact > div {
+    font: clamp(16px, min(2vw, 5vh), 21px) 'Montserrat', sans-serif;
+    line-height: 140%;
+    letter-spacing: -0.035em;
+    color: var(--semi-light);
+    margin: 1rem 1.5rem;
+    text-align: center;
+    background-color: var(--black);
+    border-radius: 4px;
+    padding: 2rem;
+    border: 4px solid var(--darker);
+}
+
+div.contact > div :is(a, button) {
+    display: block;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    color: var(--white);
+    font-size: inherit;
+}
+
+div.contact > div > button {
+    position: relative;
+    text-decoration: underline;
+    width: 100%;
+    margin-top: 5px;
+    justify-items: center;
+    background-color: transparent;
+    border: none;
+}
+
+div.contact > div :is(a:hover, button:hover) {
+    color: lightskyblue;
+    transition: 1s all ease;
+}
+
+div.contact > div > button .tooltip-text {
+    position: absolute;
+    top: -3rem;
+    padding: 5px;
+    border: 1px solid var(--white);
+    text-decoration: none;
+    background-color: var(--white);
+    color: var(--black);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s opacity ease;
+}
+
+div.contact button:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--white) transparent transparent transparent;
+}
+
+
+div.contact div.socials {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+div.contact .socials a img {
+    display: block;
+    height: 50px;
+    margin: auto;
+}
+
+

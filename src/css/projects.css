@@ -52,6 +52,19 @@ img.chroma-gallery-pic {
     width: fit-content;
 }
 
+.chroma-gallery-title-container a {
+    text-decoration: none;
+}
+
+.chroma-gallery-title-container a:hover h1 {
+    background: linear-gradient(to right, #FF0000, #FFFF00, #FFFF00, #00FFFF, #3300FF, #FF00FF);
+    /*noinspection CssInvalidPropertyValue*/
+    background-clip: text;
+    color: transparent;
+    filter: saturate(0.5) brightness(0.5);
+    transition: 1s ease;
+}
+
 .chroma-gallery-title {
     position: relative;
     font: clamp(36px, min(10vh, 9vw), 96px) 'Bebas Neue', cursive;
