@@ -1,0 +1,26 @@
+.codebox {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    background-color: transparent;
+}
+
+.codebox textarea {
+    background-color: transparent;
+    text-align: right;
+    border: 0 none;
+    color: var(--white);
+    min-height: calc(3em * 1.2);
+    min-width: 55ch;
+    max-width: 100ch;
+    overflow: auto;
+    outline: none;
+    resize: none;
+    line-height: 1.2;
+}
+
+/*@media (max-width: 1239px) {*/
+/*    .codebox {*/
+/*        display: none;*/
+/*    }*/
+/*}*/

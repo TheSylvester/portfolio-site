@@ -1,6 +1,6 @@
-// import headshot from "../assets/headshot.png";
-const headshot =
-  "https://s.studiobinder.com/wp-content/uploads/2021/01/Best-black-and-white-portraits-by-Platon.jpg?resolution=2560,1";
+import headshot from "../assets/sylvester_headshot_2.png";
+// const headshot =
+//   "https://s.studiobinder.com/wp-content/uploads/2021/01/Best-black-and-white-portraits-by-Platon.jpg?resolution=2560,1";
 
 export const Headshot = () => (
   <div className={"headshot-container"}>

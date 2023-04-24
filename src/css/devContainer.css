@@ -4,9 +4,9 @@
     width: fit-content;
     height: min(20vw, 144px);
     transform: translate(calc(50vw - 50%), calc(50vh - 50%));
-    z-index: 10 !important;
-    /*background-color: blue;*/
+    z-index: 5 !important;
     --char: 39px;
+    user-select: none;
 }
 
 .dev-frame {
@@ -17,9 +17,7 @@
     font-size: clamp(45px, 8vw, 114px);
     font-family: 'Bebas Neue', fantasy;
     line-height: 89%;
-    /*line-height: 100%;*/
     color: var(--white);
-    /*background-color: red;*/
 }
 
 .dev-title {
@@ -37,11 +35,6 @@
 
 }
 
-/* flipBanner */
-
-
-/* flipBanner ends */
-
 
 @media only screen and (max-width: 799px) {
     .dev-container {
@@ -49,7 +42,7 @@
         width: fit-content;
         transform: translate(calc(50vw - 50%), calc(clamp(60px, 10vh, 100px) + 5vh));
         text-shadow: 0 0 5px var(--black);
-        z-index: 10;
+        z-index: 5;
     }
 
     .dev-name {

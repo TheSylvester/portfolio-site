@@ -50,14 +50,14 @@ ul.nav-items > li:first-of-type {
 
 .nav-top-bar {
     position: fixed;
-    width: 100vw;
+    width: 100px;
     height: clamp(80px, 10vh, 100px);
     z-index: 5;
+    cursor: pointer;
     /*background-color: var(--black);*/
 }
 
 .nav-logo {
-    cursor: pointer;
     transform: translate(calc(50px - 50%), 35px);
     width: fit-content;
     height: fit-content;
@@ -75,8 +75,19 @@ ul.nav-items > li:first-of-type {
     }
 
     .nav-top-bar {
-        /*height: 80px;*/
         width: 80px;
+    }
+
+    ul.nav-items {
+        display: none;
+    }
+
+    .nav-top-bar:hover + ul.nav-items, .nav-top-bar:focus + ul.nav-items, .nav-top-bar:active + ul.nav-items, ul.nav-items:hover {
+        display: flex;
+    }
+
+    .nav-root:hover ul.nav-items, .nav-root:focus ul.nav-items, .nav-root:active ul.nav-items {
+        display: flex;
     }
 
 }
@@ -84,6 +95,7 @@ ul.nav-items > li:first-of-type {
 .nav-logo-letters {
     font: 37px "Bebas Neue", cursive;
     line-height: 89%;
+    user-select: none;
 }
 
 .nav-logo-letters::before {

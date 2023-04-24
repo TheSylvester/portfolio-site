@@ -1,0 +1,21 @@
+.logo-dock {
+    position: absolute;
+    right: 0;
+    top: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    z-index: 5;
+}
+
+.logo-dock > code > img {
+    filter: saturate(0) brightness(50%);
+    transition: 0.5s filter ease, 0.5s height ease;
+
+}
+
+.logo-dock > code > img:hover {
+    filter: saturate(100%) brightness(100%);
+    height: 75px;
+}

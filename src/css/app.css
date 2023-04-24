@@ -19,6 +19,8 @@ font-family: 'Montserrat', sans-serif;
 @import "./about.css";
 @import "./flipBanner.css";
 @import "./modal.css";
+@import "./logo-dock.css";
+@import "./codeExtractor.css";
 
 /* media queries */
 @import "./projects-sm.css";

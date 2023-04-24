@@ -9,10 +9,12 @@ export function NameAndTitle() {
           <FlipBanner
             bannerText={[
               "Full-Stack",
-              "Front-End",
               "Javascript",
               "React",
+              "Node JS",
               "Mongo DB",
+              "Front-End",
+              "Back-End",
               "Unity Game",
             ]}
           />

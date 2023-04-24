@@ -19,7 +19,7 @@ const COLOUR_COLD = "#777777";
 
 export const FlipBanner = ({ bannerText = [] }) => {
   useEffect(() => {
-    /* get max # of characters and make each text string padded "_____STRING" */
+    /* get max # of characters in each string, and make each text string padded "_____STRING" to max chars */
     const maxLength = Math.max(...bannerText.map((word) => word.length));
     const paddedStrings = bannerText.map((word) =>
       word.toUpperCase().padStart(maxLength, " ")
@@ -62,6 +62,7 @@ export const FlipBanner = ({ bannerText = [] }) => {
       });
     };
 
+    /* set --fontSize css variable */
     const container = document.querySelector(".banner-container");
     container.style.setProperty("--fontSize", fontSize + "px");
 
@@ -71,7 +72,7 @@ export const FlipBanner = ({ bannerText = [] }) => {
       charDiv.className = "character";
       document.querySelector(".banner-container").append(charDiv);
 
-      /* make A-Z letter pillars that scroll into place to make the word */
+      /* in each char box, make A-Z letter pillars that scroll into place to make the word */
       const pillar = document.createElement("div");
       pillar.className = "letter-pillar";
       const letterDivs = letters.split("").map((letter) => {
